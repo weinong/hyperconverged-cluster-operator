@@ -209,3 +209,9 @@ replace vbom.ml/util => github.com/fvbommel/util v0.0.0-20180919145318-efcd4e0f9
 replace bitbucket.org/ww/goautoneg => github.com/munnerz/goautoneg v0.0.0-20120707110453-a547fc61f48d
 
 replace github.com/openshift/api => github.com/openshift/api v0.0.0-20250409155250-8fcc4e71758a
+
+// Replace KubeVirt modules with your fork at https://github.com/kaizentm/kubevirt
+// Commit: 63cf660464c27b2ae6335118b197edf1124ba285
+replace kubevirt.io/api => github.com/kaizentm/kubevirt/staging/src/kubevirt.io/api v0.0.0-20251002190125-63cf660464c2
+
+replace kubevirt.io/client-go => github.com/kaizentm/kubevirt/staging/src/kubevirt.io/client-go v0.0.0-20251002190125-63cf660464c2

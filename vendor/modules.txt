@@ -975,7 +975,7 @@ k8s.io/utils/pointer
 k8s.io/utils/ptr
 k8s.io/utils/strings/slices
 k8s.io/utils/trace
-# kubevirt.io/api v1.6.0
+# kubevirt.io/api v1.6.0 => github.com/kaizentm/kubevirt/staging/src/kubevirt.io/api v0.0.0-20251002190125-63cf660464c2
 ## explicit; go 1.23.0
 kubevirt.io/api/core
 kubevirt.io/api/core/v1
@@ -1100,3 +1100,5 @@ sigs.k8s.io/yaml/goyaml.v2
 # vbom.ml/util => github.com/fvbommel/util v0.0.0-20180919145318-efcd4e0f9787
 # bitbucket.org/ww/goautoneg => github.com/munnerz/goautoneg v0.0.0-20120707110453-a547fc61f48d
 # github.com/openshift/api => github.com/openshift/api v0.0.0-20250409155250-8fcc4e71758a
+# kubevirt.io/api => github.com/kaizentm/kubevirt/staging/src/kubevirt.io/api v0.0.0-20251002190125-63cf660464c2
+# kubevirt.io/client-go => github.com/kaizentm/kubevirt/staging/src/kubevirt.io/client-go v0.0.0-20251002190125-63cf660464c2

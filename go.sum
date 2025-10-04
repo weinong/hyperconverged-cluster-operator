@@ -171,6 +171,8 @@ github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnr
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/k8snetworkplumbingwg/network-attachment-definition-client v1.7.7 h1:z4P744DR+PIpkjwXSEc6TvN3L6LVzmUquFgmNm8wSUc=
 github.com/k8snetworkplumbingwg/network-attachment-definition-client v1.7.7/go.mod h1:CM7HAH5PNuIsqjMN0fGc1ydM74Uj+0VZFhob620nklw=
+github.com/kaizentm/kubevirt/staging/src/kubevirt.io/api v0.0.0-20251002190125-63cf660464c2 h1:L/X1KfsisLssGCeA0lX8WfmLFEv90xmYWnaYW1vm4Bg=
+github.com/kaizentm/kubevirt/staging/src/kubevirt.io/api v0.0.0-20251002190125-63cf660464c2/go.mod h1:p66fEy/g79x7VpgUwrkUgOoG2lYs5LQq37WM6JXMwj4=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/klauspost/compress v1.18.0 h1:c/Cqfb0r+Yi+JtIEq73FWXVkRonBlf0CRNYc8Zttxdo=
@@ -676,8 +678,6 @@ k8s.io/utils v0.0.0-20240711033017-18e509b52bc8/go.mod h1:OLgZIPagt7ERELqWJFomSt
 k8s.io/utils v0.0.0-20241104100929-3ea5e8cea738/go.mod h1:OLgZIPagt7ERELqWJFomSt595RzquPNLL48iOWgYOg0=
 k8s.io/utils v0.0.0-20250604170112-4c0f3b243397 h1:hwvWFiBzdWw1FhfY1FooPn3kzWuJ8tmbZBHi4zVsl1Y=
 k8s.io/utils v0.0.0-20250604170112-4c0f3b243397/go.mod h1:OLgZIPagt7ERELqWJFomSt595RzquPNLL48iOWgYOg0=
-kubevirt.io/api v1.6.0 h1:ZO3Dh0b24PCdCe76uLD4cRusXKrcarOzt229UFly7PQ=
-kubevirt.io/api v1.6.0/go.mod h1:p66fEy/g79x7VpgUwrkUgOoG2lYs5LQq37WM6JXMwj4=
 kubevirt.io/application-aware-quota v1.6.0 h1:NuYTHv+liO8IBhlGXF9d6U/3sbAgFlh6R6XfRKaITgw=
 kubevirt.io/application-aware-quota v1.6.0/go.mod h1:wgjhPNkH+rgq9TjMftRRR1YppB98YeIm6zqM74dJNz0=
 kubevirt.io/containerized-data-importer-api v1.63.1 h1:g2I9za0QEscRsQjOOK/MM0feywp1x9Gl8IyT6Egtg0g=
