@@ -1,0 +1,20 @@
+apiVersion: hco.kubevirt.io/v1beta1
+kind: HyperConverged
+metadata:
+  name: kubevirt-hyperconverged
+  namespace: kubevirt-hyperconverged
+  annotations:
+    kubevirt.kubevirt.io/jsonpatch: |-
+      [
+        {
+          "op": "add",
+          "path": "/spec/configuration/developerConfiguration/featureGates",
+          "value": ["ConfigurableHypervisor"]
+        },
+        {
+          "op": "add",
+          "path": "/spec/configuration/hypervisorConfiguration",
+          "value": { "name": "hyperv-layered" }
+        }
+      ]
+spec: {}
