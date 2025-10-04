@@ -136,7 +136,7 @@ build-push-multi-arch-functest-image:
 	IMAGE_NAME=$(IMAGE_REGISTRY)/$(FUNC_TEST_IMAGE):$(IMAGE_TAG) SHA=$(SHA) DOCKER_FILE="build/Dockerfile.functest" ./hack/build-push-multi-arch-images.sh
 
 container-build-artifacts-server:
-	podman build -f build/Dockerfile.artifacts -t $(IMAGE_REGISTRY)/$(VIRT_ARTIFACTS_SERVER):$(IMAGE_TAG) --build-arg git_sha=$(SHA) .
+	docker build -f build/Dockerfile.artifacts -t $(IMAGE_REGISTRY)/$(VIRT_ARTIFACTS_SERVER):$(IMAGE_TAG) --build-arg git_sha=$(SHA) .
 
 build-push-multi-arch-artifacts-server:
 	IMAGE_NAME=$(IMAGE_REGISTRY)/$(VIRT_ARTIFACTS_SERVER):$(IMAGE_TAG) SHA=$(SHA) DOCKER_FILE="build/Dockerfile.artifacts" ./hack/build-push-multi-arch-images.sh
