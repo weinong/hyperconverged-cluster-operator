@@ -48,7 +48,7 @@ go mod vendor
 Update the `KUBEVIRT_VERSION` in `hack/config` to match your custom image tag:
 
 ```bash
-KUBEVIRT_VERSION="1.6.0-l1vh.127"  # Use your custom tag
+KUBEVIRT_VERSION="1.6.0-l1vh.174"  # Use your custom tag
 ```
 
 **Important:** Remove the `v` prefix if your tag doesn't include it.
@@ -65,7 +65,7 @@ Use the provided `update-kubevirt-images.sh` script:
 
 Example:
 ```bash
-./update-kubevirt-images.sh arol1vh.azurecr.io kaizentm/kubevirt 1.6.0-l1vh.127
+./update-kubevirt-images.sh ghcr.io kaizentm/kubevirt 1.6.0-l1vh.174
 ```
 
 The script will:
@@ -92,45 +92,14 @@ The following images are replaced:
 - `network-passt-binding`
 - `network-passt-binding-cni`
 
-## Step 4: Build Manifests
-
-Build the operator manifests with your custom images:
-
-```bash
-make build-manifests
-```
-
-**Note:** If your KubeVirt fork includes API changes (new fields, scheduling modifications, etc.), you may see CSV diff errors. In this case, use:
-
-```bash
-SKIP_CSV_DIFF=true make build-manifests
-```
-
-### Expected Changes from Custom Fork
-
-If your KubeVirt fork includes modifications beyond just custom builds, you may see additional changes in the generated manifests:
-
-1. **CRD Changes** (`deploy/crds/kubevirt00.crd.yaml`):
-   - New API fields (e.g., `hypervisorConfiguration`)
-   - New architecture support (e.g., s390x)
-   - Deprecated architectures (e.g., ppc64le)
-
-2. **CSV Changes** (`deploy/olm-catalog/.../kubevirt-hyperconverged-operator.*.clusterserviceversion.yaml`):
-   - Modified RBAC permissions
-   - Node affinity rules
-   - Pod tolerations
-   - Image references
-
-These changes are expected and should be committed as part of your custom build.
-
-## Step 5: Build and Deploy
+## Step 4: Build and Deploy
 
 Build the operator image with your changes:
 
 ```bash
 export IMAGE_REGISTRY=arol1vh.azurecr.io
 export REGISTRY_NAMESPACE=kubevirt
-export IMAGE_TAG=1.6.0-l1vh.127
+export IMAGE_TAG=1.6.0-l1vh.174
 
 # build the container images and push them to registry
 make container-build container-build-artifacts-server container-push
@@ -156,16 +125,16 @@ docker push $IMAGE_REGISTRY/$REGISTRY_NAMESPACE/hyperconverged-cluster-index:$IM
 oc create ns kubevirt-hyperconverged
 ./operator-sdk run bundle -n kubevirt-hyperconverged $IMAGE_REGISTRY/$REGISTRY_NAMESPACE/hyperconverged-cluster-index:$IMAGE_TAG --security-context-config restricted --verbose --timeout 5m
 
-oc -n kubevirt-hyperconverged delete operatorgroup kubevirt-hyperconverged-group
-oc -n kubevirt-hyperconverged delete subscription kubevirt-hyperconverged-operator-v1-17-0-sub
-oc -n kubevirt-hyperconverged delete operator community-kubevirt-hyperconverged.kubevirt-hyperconverged
-oc -n kubevirt-hyperconverged delete catalogsource community-kubevirt-hyperconverged-catalog
-oc -n kubevirt-hyperconverged delete csv kubevirt-hyperconverged-operator.v1.17.0
+oc apply -f deploy/hco.l1vh.yaml
 ```
 
 To clean up:
 
 ```bash
+oc -n kubevirt-hyperconverged delete hyperconverged kubevirt-hyperconverged
+oc -n kubevirt-hyperconverged delete subscription,clusterserviceversion --all
+oc -n kubevirt-hyperconverged delete operator,catalogsource,operatorgroup --all
+
 oc delete ns kubevirt-hyperconverged
 ```
 
