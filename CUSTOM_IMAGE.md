@@ -48,7 +48,7 @@ go mod vendor
 Update the `KUBEVIRT_VERSION` in `hack/config` to match your custom image tag:
 
 ```bash
-KUBEVIRT_VERSION="1.6.0-l1vh.174"  # Use your custom tag
+KUBEVIRT_VERSION="1.6.0-l1vh.195"  # Use your custom tag
 ```
 
 **Important:** Remove the `v` prefix if your tag doesn't include it.
@@ -65,7 +65,7 @@ Use the provided `update-kubevirt-images.sh` script:
 
 Example:
 ```bash
-./update-kubevirt-images.sh ghcr.io kaizentm/kubevirt 1.6.0-l1vh.174
+./update-kubevirt-images.sh ghcr.io kaizentm/kubevirt 1.6.0-l1vh.195
 ```
 
 The script will:
@@ -99,7 +99,7 @@ Build the operator image with your changes:
 ```bash
 export IMAGE_REGISTRY=arol1vh.azurecr.io
 export REGISTRY_NAMESPACE=kubevirt
-export IMAGE_TAG=1.6.0-l1vh.174
+export IMAGE_TAG=1.6.0-l1vh.195
 
 # build the container images and push them to registry
 make container-build container-build-artifacts-server container-push

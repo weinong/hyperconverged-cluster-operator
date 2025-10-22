@@ -9,12 +9,17 @@ metadata:
         {
           "op": "add",
           "path": "/spec/configuration/developerConfiguration/featureGates",
-          "value": ["ConfigurableHypervisor"]
+          "value": ["ConfigurableHypervisor", "CPUManager", "Snapshot", "HotplugVolumes", "ExpandDisks", "HostDevices", "VMExport", "KubevirtSeccompProfile", "VMPersistentState", "InstancetypeReferencePolicy", "WithHostModelCPU", "HypervStrictCheck"]
         },
         {
           "op": "add",
           "path": "/spec/configuration/hypervisorConfiguration",
           "value": { "name": "hyperv-layered" }
+        },
+        {
+          "op": "add",
+          "path": "/spec/configuration/evictionStrategy",
+          "value": "None"
         }
       ]
 spec: {}

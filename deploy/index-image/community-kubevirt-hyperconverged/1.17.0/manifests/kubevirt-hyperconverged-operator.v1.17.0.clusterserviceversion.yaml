@@ -8,7 +8,7 @@ metadata:
     categories: OpenShift Optional
     certified: "false"
     console.openshift.io/disable-operand-delete: "true"
-    containerImage: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-operator:1.6.0-l1vh.174
+    containerImage: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-operator:1.6.0-l1vh.195
     createdAt: "2020-10-23 08:58:25"
     description: A unified operator deploying and controlling KubeVirt and its supporting
       operators with opinionated defaults
@@ -3156,7 +3156,7 @@ spec:
                   value: OPERATOR
                 - name: KVM_EMULATION
                 - name: OPERATOR_IMAGE
-                  value: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-operator:1.6.0-l1vh.174
+                  value: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-operator:1.6.0-l1vh.195
                 - name: OPERATOR_NAME
                   value: hyperconverged-cluster-operator
                 - name: OPERATOR_NAMESPACE
@@ -3180,7 +3180,7 @@ spec:
                 - name: HCO_KV_IO_VERSION
                   value: 1.17.0
                 - name: KUBEVIRT_VERSION
-                  value: 1.6.0-l1vh.174
+                  value: 1.6.0-l1vh.195
                 - name: CDI_VERSION
                   value: v1.63.1
                 - name: NETWORK_ADDONS_VERSION
@@ -3196,12 +3196,12 @@ spec:
                 - name: KV_CONSOLE_PROXY_IMAGE
                   value: quay.io/kubevirt-ui/kubevirt-apiserver-proxy@sha256:935475c2850466aa5ac57e4de627fb177515cb2c402a95842ead095d82b6df5f
                 - name: PASST_SIDECAR_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/network-passt-binding@sha256:7a4ac98378e7fc2b98658157d90b62a676e78c872b9d667d68739e73cb86b6a0
+                  value: ghcr.io/kaizentm/kubevirt/network-passt-binding@sha256:da08040c3c4ae5c81bb1051d73a23398213dbc8f4e0f4f9b888520009acff33a
                 - name: PASST_CNI_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/network-passt-binding-cni@sha256:94ac916e42cd1500bbf1fe42a068d62e3b53ea6f3b786b3b5cdcf887066b6628
+                  value: ghcr.io/kaizentm/kubevirt/network-passt-binding-cni@sha256:5facbe1ccaa8036ad94b11904e960fe70dca09be04e7f68407be033c4e94a851
                 - name: WASP_AGENT_IMAGE
                   value: quay.io/openshift-virtualization/wasp-agent@sha256:eabfa6a425213f520f7a9e5b81b43e8b6430779d42c5c8b1bfd48a4f1730447a
-                image: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-operator:1.6.0-l1vh.174
+                image: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-operator:1.6.0-l1vh.195
                 imagePullPolicy: IfNotPresent
                 livenessProbe:
                   failureThreshold: 1
@@ -3272,7 +3272,7 @@ spec:
                 - name: APP
                   value: WEBHOOK
                 - name: OPERATOR_IMAGE
-                  value: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-webhook:1.6.0-l1vh.174
+                  value: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-webhook:1.6.0-l1vh.195
                 - name: OPERATOR_NAME
                   value: hyperconverged-cluster-webhook
                 - name: OPERATOR_NAMESPACE
@@ -3283,7 +3283,7 @@ spec:
                       fieldPath: metadata.name
                 - name: HCO_KV_IO_VERSION
                   value: 1.17.0
-                image: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-webhook:1.6.0-l1vh.174
+                image: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-webhook:1.6.0-l1vh.195
                 imagePullPolicy: IfNotPresent
                 livenessProbe:
                   failureThreshold: 1
@@ -3350,7 +3350,7 @@ spec:
             spec:
               automountServiceAccountToken: false
               containers:
-              - image: arol1vh.azurecr.io/kubevirt/virt-artifacts-server:1.6.0-l1vh.174
+              - image: arol1vh.azurecr.io/kubevirt/virt-artifacts-server:1.6.0-l1vh.195
                 imagePullPolicy: IfNotPresent
                 livenessProbe:
                   failureThreshold: 1
@@ -3585,34 +3585,34 @@ spec:
                 - virt-operator
                 env:
                 - name: VIRT_OPERATOR_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/virt-operator@sha256:a485135a3d594b100c1a59cd774776184c054bfa923c880ef17fed46f92dfb86
+                  value: ghcr.io/kaizentm/kubevirt/virt-operator@sha256:4c6d5bfd2b6e01078cf0b24ed519d15108ae701e6ee37537472ef2d7487f533b
                 - name: WATCH_NAMESPACE
                   valueFrom:
                     fieldRef:
                       fieldPath: metadata.annotations['olm.targetNamespaces']
                 - name: VIRT_API_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/virt-api@sha256:011a202878e8766782aea7d6e3591e207956ee434867b25da7120269cb2245e9
+                  value: ghcr.io/kaizentm/kubevirt/virt-api@sha256:81efbe42e0b7b304175071c23a49e19ddfc18c7c9e105721790b280ad62555b0
                 - name: VIRT_CONTROLLER_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/virt-controller@sha256:49243ccb0806acdab57d6618541c2f38d166e1bdac1b0731977a63f66852a837
+                  value: ghcr.io/kaizentm/kubevirt/virt-controller@sha256:8ebcbed96970699b880d66a1e051dc31cb6441e5c59808f54a450385fa535636
                 - name: VIRT_HANDLER_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/virt-handler@sha256:95f58560af8fd22ae839feb438bc154fb18d2d28a4d3a0870dc9f06dde74fc07
+                  value: ghcr.io/kaizentm/kubevirt/virt-handler@sha256:b17e63b602252b938445a78907c09840690686ac0fb0d0ab6c560844a3105224
                 - name: VIRT_LAUNCHER_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/virt-launcher@sha256:7391c8fc436e1c4c8ee9a34d1233915032e8212bb99dd73403aabdf29b643cb1
+                  value: ghcr.io/kaizentm/kubevirt/virt-launcher@sha256:5a35f2589b20d149e4865b04a4a86e19aa20927d0b65b875d5b28062b20d4d00
                 - name: VIRT_EXPORTPROXY_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/virt-exportproxy@sha256:07e8f8c2fe5141f49ff29a2bcf3abe13a3f1d46477f94d4bcb8e673c3930865e
+                  value: ghcr.io/kaizentm/kubevirt/virt-exportproxy@sha256:263ab6c9e4fc7460580205d824fd3c305912555f468d66c721923f539786959f
                 - name: VIRT_EXPORTSERVER_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/virt-exportserver@sha256:cf0a4e6f74457b0c220f4934f436c3c4ea9cbd6576fa9fb2cf3931022dcd73d0
+                  value: ghcr.io/kaizentm/kubevirt/virt-exportserver@sha256:126fadb00b6a0e6289f7fa1d96ddbcd64274cd84cb82cb34c48a225e3bd63e02
                 - name: VIRT_SYNCHRONIZATIONCONTROLLER_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/virt-synchronization-controller@sha256:8fabb43e969cd6a00f8b9c0490ec35e3aef7e1b35b8a06e341d6ee97fb1730e7
+                  value: ghcr.io/kaizentm/kubevirt/virt-synchronization-controller@sha256:59106df81d072a00ce8c20397a38d5d350a1ef363e366b1aa6ef132d71d89111
                 - name: GS_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/libguestfs-tools@sha256:9d2a36cd018e9c78ead1fe38455e39915fc197d02b919f33a78cac1d8a47cf48
+                  value: ghcr.io/kaizentm/kubevirt/libguestfs-tools@sha256:02ff5099d4d71b09ec35f9206bcf8095d3e93a11fa15bc73137c23b4865b6b27
                 - name: PR_HELPER_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/pr-helper@sha256:6238a197555dc86cb54deae61b27cb3a29a951132ea6a55a318b2793f9f0f61d
+                  value: ghcr.io/kaizentm/kubevirt/pr-helper@sha256:5f496b56d02e2e1ea89b35ec5e14dce074e11b583e03e87922fdc6310e0864ad
                 - name: SIDECAR_SHIM_IMAGE
-                  value: ghcr.io/kaizentm/kubevirt/sidecar-shim@sha256:701fedafb417fbaa2f48f2ea93b4b376656004d53d974ebf155d53e42de641ad
+                  value: ghcr.io/kaizentm/kubevirt/sidecar-shim@sha256:9d8c4debdeeca2d8a6e3027e0c5d4eec2037d6f8e7139a7f8e4d38e74cdffb8d
                 - name: KUBEVIRT_VERSION
-                  value: 1.6.0-l1vh.174
-                image: ghcr.io/kaizentm/kubevirt/virt-operator@sha256:a485135a3d594b100c1a59cd774776184c054bfa923c880ef17fed46f92dfb86
+                  value: 1.6.0-l1vh.195
+                image: ghcr.io/kaizentm/kubevirt/virt-operator@sha256:4c6d5bfd2b6e01078cf0b24ed519d15108ae701e6ee37537472ef2d7487f533b
                 imagePullPolicy: IfNotPresent
                 livenessProbe:
                   httpGet:
@@ -4840,9 +4840,9 @@ spec:
     name: hostpath-provisioner
   - image: quay.io/kubevirt/hostpath-provisioner-operator@sha256:3737d52b8046c9c92dbf36fa9826af6da66f1b54063ad09ff77486727ba44ae5
     name: hostpath-provisioner-operator
-  - image: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-operator:1.6.0-l1vh.174
+  - image: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-operator:1.6.0-l1vh.195
     name: hyperconverged-cluster-operator
-  - image: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-webhook:1.6.0-l1vh.174
+  - image: arol1vh.azurecr.io/kubevirt/hyperconverged-cluster-webhook:1.6.0-l1vh.195
     name: hyperconverged-cluster-webhook
   - image: ghcr.io/kubevirt/ipam-controller@sha256:4fdc9c77b9e683f274a31fcb7f6dbcf765799596efd93bc37512fb860f07b02f
     name: ipam-controller
@@ -4856,7 +4856,7 @@ spec:
     name: kubevirt-plugin
   - image: quay.io/kubevirt/kubevirt-template-validator@sha256:87350bb8e68683509b8ffa72738ad719b22f48192b88bc58ab6223980c4ccee9
     name: kubevirt-template-validator
-  - image: ghcr.io/kaizentm/kubevirt/libguestfs-tools@sha256:9d2a36cd018e9c78ead1fe38455e39915fc197d02b919f33a78cac1d8a47cf48
+  - image: ghcr.io/kaizentm/kubevirt/libguestfs-tools@sha256:02ff5099d4d71b09ec35f9206bcf8095d3e93a11fa15bc73137c23b4865b6b27
     name: libguestfs-tools
   - image: registry.k8s.io/sig-storage/livenessprobe@sha256:9b75b9ade162136291d5e8f13a1dfc3dec71ee61419b1bfc112e0796ff8a6aa9
     name: livenessprobe
@@ -4866,37 +4866,37 @@ spec:
     name: multus-cni
   - image: ghcr.io/k8snetworkplumbingwg/multus-dynamic-networks-controller@sha256:2a2bb32c0ea8b232b3dbe81c0323a107e8b05f8cad06704fca2efd0d993a87be
     name: multus-dynamic-networks-controller
-  - image: ghcr.io/kaizentm/kubevirt/network-passt-binding@sha256:7a4ac98378e7fc2b98658157d90b62a676e78c872b9d667d68739e73cb86b6a0
+  - image: ghcr.io/kaizentm/kubevirt/network-passt-binding@sha256:da08040c3c4ae5c81bb1051d73a23398213dbc8f4e0f4f9b888520009acff33a
     name: network-passt-binding
-  - image: ghcr.io/kaizentm/kubevirt/network-passt-binding-cni@sha256:94ac916e42cd1500bbf1fe42a068d62e3b53ea6f3b786b3b5cdcf887066b6628
+  - image: ghcr.io/kaizentm/kubevirt/network-passt-binding-cni@sha256:5facbe1ccaa8036ad94b11904e960fe70dca09be04e7f68407be033c4e94a851
     name: network-passt-binding-cni
   - image: quay.io/openshift/origin-kube-rbac-proxy@sha256:e2def4213ec0657e72eb790ae8a115511d5b8f164a62d3568d2f1bff189917e8
     name: origin-kube-rbac-proxy
   - image: ghcr.io/k8snetworkplumbingwg/ovs-cni-plugin@sha256:435f374b434b3bc70a5cfaba0011fdcf5f433d96b98b06d29306cbd8db3a8c21
     name: ovs-cni-plugin
-  - image: ghcr.io/kaizentm/kubevirt/pr-helper@sha256:6238a197555dc86cb54deae61b27cb3a29a951132ea6a55a318b2793f9f0f61d
+  - image: ghcr.io/kaizentm/kubevirt/pr-helper@sha256:5f496b56d02e2e1ea89b35ec5e14dce074e11b583e03e87922fdc6310e0864ad
     name: pr-helper
-  - image: ghcr.io/kaizentm/kubevirt/sidecar-shim@sha256:701fedafb417fbaa2f48f2ea93b4b376656004d53d974ebf155d53e42de641ad
+  - image: ghcr.io/kaizentm/kubevirt/sidecar-shim@sha256:9d8c4debdeeca2d8a6e3027e0c5d4eec2037d6f8e7139a7f8e4d38e74cdffb8d
     name: sidecar-shim
   - image: quay.io/kubevirt/ssp-operator@sha256:7a8d04480403bcbbdd5cd854701013bfe57a4d7ae57aad6e9c83aae331e91bfa
     name: ssp-operator
-  - image: ghcr.io/kaizentm/kubevirt/virt-api@sha256:011a202878e8766782aea7d6e3591e207956ee434867b25da7120269cb2245e9
+  - image: ghcr.io/kaizentm/kubevirt/virt-api@sha256:81efbe42e0b7b304175071c23a49e19ddfc18c7c9e105721790b280ad62555b0
     name: virt-api
-  - image: arol1vh.azurecr.io/kubevirt/virt-artifacts-server:1.6.0-l1vh.174
+  - image: arol1vh.azurecr.io/kubevirt/virt-artifacts-server:1.6.0-l1vh.195
     name: virt-artifacts-server
-  - image: ghcr.io/kaizentm/kubevirt/virt-controller@sha256:49243ccb0806acdab57d6618541c2f38d166e1bdac1b0731977a63f66852a837
+  - image: ghcr.io/kaizentm/kubevirt/virt-controller@sha256:8ebcbed96970699b880d66a1e051dc31cb6441e5c59808f54a450385fa535636
     name: virt-controller
-  - image: ghcr.io/kaizentm/kubevirt/virt-exportproxy@sha256:07e8f8c2fe5141f49ff29a2bcf3abe13a3f1d46477f94d4bcb8e673c3930865e
+  - image: ghcr.io/kaizentm/kubevirt/virt-exportproxy@sha256:263ab6c9e4fc7460580205d824fd3c305912555f468d66c721923f539786959f
     name: virt-exportproxy
-  - image: ghcr.io/kaizentm/kubevirt/virt-exportserver@sha256:cf0a4e6f74457b0c220f4934f436c3c4ea9cbd6576fa9fb2cf3931022dcd73d0
+  - image: ghcr.io/kaizentm/kubevirt/virt-exportserver@sha256:126fadb00b6a0e6289f7fa1d96ddbcd64274cd84cb82cb34c48a225e3bd63e02
     name: virt-exportserver
-  - image: ghcr.io/kaizentm/kubevirt/virt-handler@sha256:95f58560af8fd22ae839feb438bc154fb18d2d28a4d3a0870dc9f06dde74fc07
+  - image: ghcr.io/kaizentm/kubevirt/virt-handler@sha256:b17e63b602252b938445a78907c09840690686ac0fb0d0ab6c560844a3105224
     name: virt-handler
-  - image: ghcr.io/kaizentm/kubevirt/virt-launcher@sha256:7391c8fc436e1c4c8ee9a34d1233915032e8212bb99dd73403aabdf29b643cb1
+  - image: ghcr.io/kaizentm/kubevirt/virt-launcher@sha256:5a35f2589b20d149e4865b04a4a86e19aa20927d0b65b875d5b28062b20d4d00
     name: virt-launcher
-  - image: ghcr.io/kaizentm/kubevirt/virt-operator@sha256:a485135a3d594b100c1a59cd774776184c054bfa923c880ef17fed46f92dfb86
+  - image: ghcr.io/kaizentm/kubevirt/virt-operator@sha256:4c6d5bfd2b6e01078cf0b24ed519d15108ae701e6ee37537472ef2d7487f533b
     name: virt-operator
-  - image: ghcr.io/kaizentm/kubevirt/virt-synchronization-controller@sha256:8fabb43e969cd6a00f8b9c0490ec35e3aef7e1b35b8a06e341d6ee97fb1730e7
+  - image: ghcr.io/kaizentm/kubevirt/virt-synchronization-controller@sha256:59106df81d072a00ce8c20397a38d5d350a1ef363e366b1aa6ef132d71d89111
     name: virt-synchronization-controller
   - image: ghcr.io/kaizentm/kubevirt/virtio-container-disk@sha256:6094aac0d18504a57652d7e16707748513f194f2b2aa68651340eb5d858af92c
     name: virtio-container-disk
