@@ -37,4 +37,8 @@ metadata:
           "value": "qemu64-v1"
         }
       ]
-spec: {}
+spec:
+  permittedHostDevices:
+    pciHostDevices:
+    - pciDeviceSelector: "10DE:2330"
+      resourceName: "nvidia.com/GH100"  
